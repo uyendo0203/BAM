@@ -1,0 +1,51 @@
+$UTMAvo: "UTMAvo";
+$UTMAvoBold: "UTMAvoBold";
+$UTMAvoBoldItalic: "UTMAvoBoldItalic";
+$UTMAvoItalic: "UTMAvoItalic";
+$UTMBebas: "UTMBebas";
+
+@font-face {
+    font-family: "UTMAvo";
+    src: url("../assets/fonts/UTMAvo/UTMAvo.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/UTMAvo/UTMAvo.woff") format("woff"),
+        url("../assets/fonts/UTMAvo/UTMAvo.ttf") format("truetype"),
+        url("../assets/fonts/UTMAvo/UTMAvo.svg#UTMAvo") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "UTMAvoBold";
+    src: url("../assets/fonts/UTMAvoBold/UTMAvoBold.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/UTMAvoBold/UTMAvoBold.woff") format("woff"),
+        url("../assets/fonts/UTMAvoBold/UTMAvoBold.ttf") format("truetype"),
+        url("../assets/fonts/UTMAvoBold/UTMAvoBold.svg#UTMAvoBold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "UTMAvoBoldItalic";
+    src: url("../assets/fonts/UTMAvoBoldItalic/UTMAvoBold_Italic.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/UTMAvoBoldItalic/UTMAvoBold_Italic.woff") format("woff"),
+        url("../assets/fonts/UTMAvoBoldItalic/UTMAvoBold_Italic.ttf") format("truetype"),
+        url("../assets/fonts/UTMAvoBoldItalic/UTMAvoBold_Italic.svg#UTMAvoBold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "UTMAvoItalic";
+    src: url("../assets/fonts/UTMAvoItalic/UTMAvoItalic.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/UTMAvoItalic/UTMAvoItalic.woff") format("woff"),
+        url("../assets/fonts/UTMAvoItalic/UTMAvoItalic.ttf") format("truetype"),
+        url("../assets/fonts/UTMAvoItalic/UTMAvoItalic.svg#UTMAvoItalic") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "UTMBebas";
+    src: url("../assets/fonts/UTMBebas/UTMBebas.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/UTMBebas/UTMBebas.woff") format("woff"),
+        url("../assets/fonts/UTMBebas/UTMBebas.ttf") format("truetype"),
+        url("../assets/fonts/UTMBebas/UTMBebas.svg#UTMBebas") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}

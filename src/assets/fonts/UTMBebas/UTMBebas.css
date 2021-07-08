@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'UTMBebas';
+    src: url('fonts/UTMBebas.eot');
+    src: url('fonts/UTMBebas.eot') format('embedded-opentype'),
+         url('fonts/UTMBebas.woff2') format('woff2'),
+         url('fonts/UTMBebas.woff') format('woff'),
+         url('fonts/UTMBebas.ttf') format('truetype'),
+         url('fonts/UTMBebas.svg#UTMBebas') format('svg');
+}
