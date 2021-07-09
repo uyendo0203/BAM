@@ -1,7 +1,7 @@
 body {
     font-family: $UTMAvo;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     padding: 0;
 }
 
@@ -324,44 +324,66 @@ button {
     }
 }
 
-.socical {
-    @include flexbox;
-    @include align-items(center);
-    a {
-        width: 1.979vw;
-        height: 1.979vw;
-        @include flexbox;
-        @include align-items(center);
-        border-radius: 50%;
-        background-color: #fff;
-        @media (max-width: 767px) {
-            width: 25px;
-            height: 25px;
-        }
-        &:hover {
-            img {
-                transform: scale(0.85);
+.button-dk {
+    &:hover {
+        img {
+            display: none;
+            &.hover {
+                display: block;
             }
         }
-        img {
-            transition: all 0.2s ease;
+    }
+    img {
+        &.hover {
+            display: none;
         }
-        &:not(:last-child) {
-            margin-right: 1.146vw;
+    }
+}
+.social {
+    @include flexbox;
+    @include align-items(center);
+    position: fixed;
+    z-index: 9;
+    top: 190px;
+    left: 50px;
+    flex-direction: column;
+    &-item {
+        width: 62px;
+        margin: 5px 0;
+        &:hover {
+            img {
+                display: none;
+                &.hover {
+                    display: block;
+                }
+            }
         }
+    }
+    img {
+        &.hover {
+            display: none;
+        }
+    }
+
+    &-chat {
+    }
+    &-dangki {
+    }
+    &-fb {
+    }
+    &-phone {
     }
 }
 
 .header {
-    @include box-shadow(0 0.26vw 0.781vw #0000000d);
     @include transition(all 0.3s ease);
     text-align: center;
-    background-color: #0b2c62e6;
-    border-bottom: 0.052vw solid #fff;
     position: fixed;
     width: 100%;
     z-index: 999;
     top: 0;
+    padding-left: 380px;
+    padding-right: 395px;
     &.fixed {
         .header-container {
             @media (min-width: 1024px) {
@@ -384,10 +406,11 @@ button {
 
     &-container {
         @include flexbox;
-        @include align-items(center);
+        @include align-items(flex-start);
+        @include justify-content(space-between);
         @include flex-wrap(wrap);
+
         width: 100%;
-        width: 62.5vw;
         padding: 1.2vw 0;
         margin-left: auto;
         margin-right: auto;
@@ -400,13 +423,11 @@ button {
     }
 
     &-logo {
-        @include transition(all 0.3s ease);
-        width: 9.479vw;
-        display: inline-block;
-
-        @media (max-width: 767px) {
-            max-width: 120px;
-            width: 100%;
+        &-1 {
+            width: 120px;
+        }
+        &-2 {
+            width: 125px;
         }
     }
 
@@ -414,7 +435,6 @@ button {
         @include flexbox;
         @include align-items(center);
         @include flex-wrap(wrap);
-        margin-left: auto;
         .btn {
             color: #fff;
             @media (max-width: 767px) {
@@ -492,40 +512,47 @@ button {
             @include flexbox;
             @include align-items(center);
             list-style: none;
-            margin: 0 1.042vw;
+            margin: 0 10px;
             position: relative;
-            color: #fff;
+            color: #11426e;
             text-decoration: none;
             text-transform: uppercase;
             text-transform: uppercase;
-            font-size: 0.885vw;
-
+            font-size: 13px;
+            font-family: $UTMAvo;
             transition: all 0.2s ease;
+            padding: 7px 10px;
 
             @media (max-width: 767px) {
                 margin: 10px 20px;
                 font-size: 14px;
                 @include transform(translateX(50%));
             }
-            &::before {
+            &::before,
+            &::after {
                 position: absolute;
                 content: "";
                 transition: all 0.2s ease;
                 width: 0;
+                width: 12px;
+                height: 2px;
+                right: -17px;
+            }
+            &::before {
+                background-color: #88431c;
+                top: 15px;
+            }
+            &::after {
+                background-color: #164775;
+                top: 18px;
             }
 
             &.active,
             &:hover {
                 font-family: $UTMAvo;
-
-                // &::before {
-                //     background-color: #fff;
-                //     height: 0.052vw;
-                //     width: 100%;
-                //     bottom: 1px;
-                //     left: 50%;
-                //     @include transform(translateX(-50%));
-                // }
+                background-color: #8e3900;
+                color: #fff;
+                border-radius: 6px;
             }
         }
 
@@ -609,7 +636,7 @@ button {
     &-social {
         position: absolute;
         right: 1.563vw;
-        @extend .socical;
+        @extend .social;
         @media (max-width: 767px) {
             position: static;
             margin-right: 10px;
@@ -721,4 +748,47 @@ button {
 
 @function vw($px-vw, $base-vw: 1920px) {
     @return ($px-vw * 100vw) / $base-vw;
+}
+
+.img-style {
+    position: relative;
+    border-radius: 85px 85px 85px 0;
+    overflow: auto;
+    display: block;
+    background-image: url(../assets/images/img-style-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    padding: 5px 5px 0 0;
+    &.left {
+        border-radius: 85px 85px 0 85px;
+        background-attachment: fixed;
+        padding: 5px 0 0 5px;
+        &::before {
+            transform: rotateY(180deg);
+        }
+        img {
+            border-radius: 81px 81px 0 81px;
+        }
+    }
+    img {
+        position: relative;
+        border-radius: 81px 81px 81px 0;
+        background-attachment: fixed;
+    }
+}
+.button-dk {
+    width: 176px;
+    display: inline-block;
+    &:hover {
+        img {
+            display: none;
+        }
+        .hover {
+            display: block;
+        }
+    }
+    .hover {
+        display: none;
+    }
 }
