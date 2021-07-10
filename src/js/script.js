@@ -87,11 +87,14 @@ function goToByScroll(link) {
 
     let space = 0
     switch (link) {
-        case 'dangky':
-            space = -100
+        case 'quyenloi':
+            space = -50
             break;
-        case 'lienhe':
-            space = 800
+        case 'dataotoandien':
+        case 'noibat':
+        case 'sukien':
+        case 'gioithieu':
+            space = -100
             break;
         default:
             space = 70

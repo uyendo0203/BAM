@@ -546,7 +546,7 @@ button {
         @media (max-width: 767px) {
             @include flexbox;
             @include align-items(center);
-            position: absolute;
+            position: fixed;
             right: 20px;
         }
 
@@ -565,7 +565,7 @@ button {
             }
 
             .line {
-                background-color: #fff;
+                background-color: #11426e;
                 transition: all 0.2s ease;
                 height: 0.104vw;
                 width: 0.938vw;
@@ -583,6 +583,9 @@ button {
         }
 
         &.active {
+            .line {
+                background-color: #fff;
+            }
             .line_2 {
                 display: none;
             }
