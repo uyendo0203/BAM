@@ -132,12 +132,12 @@ let Menu = function () {
     })
 }
 
-let Home5ValidateForm = function () {
+let Block8ValidateForm = function () {
     var form = [{
-        name: '.home5Name',
+        name: '.block8Name',
         validators: ['required']
     }, {
-        name: '.home5Phone',
+        name: '.block8Phone',
         validators: ['required', 'isNumber'],
         // minLength: 10,
         // maxLength: 10,
@@ -145,17 +145,24 @@ let Home5ValidateForm = function () {
         name: '.home5Email',
         validators: []
     }]
-    var $submit = ".home5__form button";
+    var $submit = ".block8__form button";
     validateForm($submit, form);
 }
-
-let GotoForm = function () {
-    $('#home2_to_form').click(function (e) {
-        e.preventDefault()
-        $('html, body').animate({
-            scrollTop: $(".home5").offset().top - 150
-        }, 1000);
-    });
+let PopupValidateForm = function () {
+    var form = [{
+        name: '.popupName',
+        validators: ['required']
+    }, {
+        name: '.popupPhone',
+        validators: ['required', 'isNumber'],
+        // minLength: 10,
+        // maxLength: 10,
+    }, {
+        name: '.popupEmail',
+        validators: []
+    }]
+    var $submit = ".popup__form button";
+    validateForm($submit, form);
 }
 
 let MenuScrollFixed = function () {
@@ -169,154 +176,78 @@ let MenuScrollFixed = function () {
 }
 
 
-// home 
-$(".home1__slider .img").hide()
-$(".home1__slider .img:first-child").show()
-let sliderHome1 = function () {
-    if ($(".home1__slider").length === 0) {
-        return false
-    }
-
-    $(".home1__slider .img").show()
-    $(".home1__slider").not('.slick-initialized').slick({
-        arrows: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
+// slider5 
+let slider5 = function () {
+    $('.block5__slider--top').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        infinite: true,
-    });
-}
-let sliderHome2 = function () {
-    if ($(".home2__slider").length === 0) {
-        return false
-    }
-
-    $(".home2__slider").not('.slick-initialized').slick({
         arrows: true,
+        fade: true,
+        asNavFor: '.block5__slider--bottom',
+        prevArrow: $('.block5 .slick-prev'),
+        nextArrow: $('.block5 .slick-next')
+    });
+    $('.block5__slider--bottom').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '.block5__slider--top',
         dots: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-    });
-}
-let sliderHome3 = function () {
-    if ($(".home3__slider").length === 0) {
-        return false
-    }
-
-    $(".home3__slider").not('.slick-initialized').slick({
-        arrows: true,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-    });
-}
-let sliderHome4 = function () {
-    if ($(".home4__bottom--slider").length === 0) {
-        return false
-    }
-
-    $(".home4__bottom--slider").not('.slick-initialized').slick({
-        arrows: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
+        focusOnSelect: true,
         responsive: [
-
             {
                 breakpoint: 767,
                 settings: {
-                    arrows: false
+                    slidesToShow: 3,
                 }
             },
-
         ]
-    }).on('afterChange', function (event, slick) {
-        $('.home4__bottom--img .img').removeClass('active')
-        $('.home4__bottom--img .img[data-slide=' + slick.currentSlide + ']').addClass('active')
-    });;
+    });
+
 }
-let sliderHome6 = function () {
-    if ($(".home6__slider").length === 0) {
-        return false
-    }
-    $(".home6__slider").not('.slick-initialized').slick({
-        arrows: true,
+let slider6 = function () {
+    $('.block6__slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        arrows: false,
         dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        prevArrow: '.home6__arrow .slick-prev',
-        nextArrow: '.home6__arrow .slick-next',
-    }).on('afterChange', function (event, slick) {
-        $('.home6__content-item').removeClass('active')
-        $('.home6__content-item[data-slide=' + slick.currentSlide + ']').addClass('active')
-    });;
-
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    });
 }
 
-// product 
-let sliderProduct2 = function () {
-    if ($(".product2__slider").length === 0) {
-        return false
-    }
-
-
-    // > 1 item -> slick 
-    if ($(".product2__item").length > 1) {
-        $(".product2__slider").not('.slick-initialized').slick({
-            arrows: true,
-            dots: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-        });
-    }
-}
 
 $(window).on("load", function () {
     // common 
-
-    // setTimeout(() => {
-    //     $('#btn-dangky').trigger("click");
-    // }, 500);
+    $(".fancybox").fancybox({
+        type: "iframe",
+        helpers: {
+            title: {
+                type: 'over'
+            }
+        }
+    });
 
     $('.loading').removeClass('active')
     new WOW().init();
     MenuToggleMB()
-    GotoForm()
     Menu()
 
-    // home 
-    sliderHome1()
-    sliderHome2()
-    sliderHome3()
-    sliderHome4()
-    sliderHome6()
+    slider5()
+    slider6()
 
-    Home5ValidateForm()
-
-    // product 
-    sliderProduct2()
+    Block8ValidateForm()
+    PopupValidateForm()
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        if ($(".product2__item").length > 1) {
-            $(".product2__slider").slick('resize');
-        }
+        let nameTab = $(this).attr('href').split('#')[1]
+        $('.block7 .tab__title').removeClass('active')
+        $('.block7 .tab__' + nameTab).addClass('active')
     })
 
     // goto block when onLoad 

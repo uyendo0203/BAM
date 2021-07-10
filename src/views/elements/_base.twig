@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./assets/libs/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./assets/libs/slick/slick.css">
         <link rel="stylesheet" href="./assets/libs/slick/slick-theme.css">
+        <link rel="stylesheet" href="./assets/libs/lightbox/ekko-lightbox.css">
         {#
         <link rel="shortcut icon" type="image/ico" href="./assets/images/favicon.ico">
         #}
@@ -26,14 +27,20 @@
         </main>
         <!-- libs  ---------------------------------------------------------------->
         <script src="./assets/libs/jquery/jquery-3.4.1.min.js"></script>
-        {#
-        <script src="https://www.youtube.com/iframe_api"></script>
-        #}
         <script src="./assets/libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="./assets/libs/slick/slick.min.js"></script>
         <script src="./assets/libs/wow.min.js"></script>
+        <script src="./assets/libs/lightbox/ekko-lightbox.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
         <script type="text/javascript">
-
+            var onloadCallback = function() {
+                    grecaptcha.render('captcha', {
+                            'sitekey' : 'your_site_key'
+                    });
+                    grecaptcha.render('captcha-modal', {
+                            'sitekey' : 'your_site_key'
+                    });
+            };
         $('body').on('click', '.popup-news__close', function (event) {
             $('.popup-news').removeClass("active");
         })

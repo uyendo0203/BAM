@@ -1,4 +1,4 @@
-{% set page_title = 'Freeplus' %}
+{% set page_title = 'BAM' %}
 {% extends "../elements/_base.twig" %}
 
 {% block content %}
@@ -9,7 +9,7 @@
         <img alt="" src="./assets/images/icon-chat.png">
         <img alt="" class="hover" src="./assets/images/icon-chat-hover.png">
     </a>
-    <a href="" class="social-item social-dangki">
+    <a class="social-item social-dangki" data-toggle="modal" data-target="#modal-form">
         <img alt="" src="./assets/images/icon-dangki.png">
         <img alt="" class="hover" src="./assets/images/icon-dangki-hover.png">
     </a>
@@ -28,9 +28,9 @@
             <img alt="" src="./assets/images/block1-bg.png">
         </figure>
         <div class="block1__wrap">
-            <figure class="block1__play-icon">
-                <img alt="" src="./assets/images/icon-playvideo.png">
-            </figure>
+            <a class="block1__play-icon fancybox" data-fancybox-type="iframe" href="https://www.youtube.com/embed/_MXyU5D6D-g?&autoplay=1&mute=1&loop=1&rel=0&showinfo=0">
+                <img src="./assets/images/icon-playvideo.png" alt="">
+            </a>
             <div class="block1__content">
                 <div class="block1__title--wrap d-flex flex-column">
                     <div class="block1__sub1">
@@ -63,6 +63,9 @@
         </div>
     </div>
     <div class="block2">
+        <div class="block2__bg">
+            <img alt="" src="./assets/images/bg-common.jpg">
+        </div>
         <div class="block2__wrap">
             <div class="block2__top">
                 <div class="block2__top--left">
@@ -84,9 +87,9 @@
                     <figure class="man">
                         <img alt="" src="./assets/images/block2-img-right.jpg">
                     </figure>
-                    <figure class="play-video">
+                    <a class="play-video fancybox" data-fancybox-type="iframe" href="https://www.youtube.com/embed/_MXyU5D6D-g?&autoplay=1&mute=1&loop=1&rel=0&showinfo=0">
                         <img alt="" src="./assets/images/block2-iconplay.png">
-                    </figure>
+                    </a>
                 </div>
             </div>
             <div class="block2__bottom">
@@ -122,7 +125,7 @@
                 </div>
                 <div class="block2__bottom--item">
                     <figure class="block2__bottom--img">
-                        <span class="img-style right">
+                        <span class="img-style">
                             <img alt="" src="./assets/images/block5-img.jpg">
                         </span>
                     </figure>
@@ -161,7 +164,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="button-dk">
+                <a class="button-dk" data-toggle="modal" data-target="#modal-form">
                     <img alt="" src="./assets/images/icon-dk-v.png">
                     <img class="hover" alt="" src="./assets/images/icon-dk-v-hover.png">
                 </a>
@@ -260,6 +263,7 @@
             </div>
             <div class="block5__slider">
                 <div class="block5__slider--top">
+                    {% for i in  1..6 %}
                     <div class="block5__slider--item d-flex">
                         <div class="block5__slider--left">
                             <div class="info">
@@ -287,51 +291,44 @@
                             </span>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
                 <div class="block5__slider--bottom">
+                    {% for i in  1..6%}
                     <div class="item">
                         <figure class="img">
                             <img alt="" src="./assets/images/block5-img.jpg">
                         </figure>
                         <div class="name">tran van a</div>
                     </div>
-                    <div class="item">
-                        <figure class="img">
-                            <img alt="" src="./assets/images/block5-img.jpg">
-                        </figure>
-                        <div class="name">tran van a</div>
-                    </div>
-                    <div class="item">
-                        <figure class="img">
-                            <img alt="" src="./assets/images/block5-img.jpg">
-                        </figure>
-                        <div class="name">tran van a</div>
-                    </div>
-                    <div class="item">
-                        <figure class="img">
-                            <img alt="" src="./assets/images/block5-img.jpg">
-                        </figure>
-                        <div class="name">tran van a</div>
-                    </div>
-                    <div class="item">
-                        <figure class="img">
-                            <img alt="" src="./assets/images/block5-img.jpg">
-                        </figure>
-                        <div class="name">tran van a</div>
-                    </div>
+                    {% endfor %}
+                </div>
+                <div class="block5__slider--arrows">
+                    <span type="button" class="slick-arrow slick-prev">
+                        <img src="./assets/images/arrow-left-hover.png">
+                        <img class="hover" src="./assets/images/arrow-left.png">
+                    </span>
+                    <span type="button" class="lick-arrow slick-next">
+                        <img src="./assets/images/arrow-right.png">
+                        <img class="hover" src="./assets/images/arrow-right-hover.png">
+                    </span>
                 </div>
             </div>
         </div>
     </div>
     <div class="block6">
+        <div class="block6__bg">
+            <img alt="" src="./assets/images/block67-bg.png">
+        </div>
         <div class="block6__wrap">
             <div class="block6__title">
                 <h2 class="title">sự kiện</h2>
                 <div class="sub-title">sự kiện</div>
             </div>
             <div class="block6__content block6__slider">
-                <div class="block6__slider--item">
-                    <div class="block6__item">
+                {% for i in  1..4%}
+                <div class="block6__item">
+                    <div class="block6__slider--item">
                         <figure class="block6__img">
                             <img alt="" src="./assets/images/block6-img-1.jpg">
                         </figure>
@@ -342,40 +339,53 @@
                             <div class="des">
                                 Đối với các mỏ khoáng sản làm vật liệu xây dựng thông thường (trừ cát, sỏi lòng sông, cửa biển) đã cấp phép, đang hoạt động, còn thời hạn khai thác, được phép quyết định nâng công suất không quá 50% công suất ghi trong giấy phép khai thác (không tăng trữ lượng đã cấp phép) mà không phải lập dự án đầu tư điều chỉnh, đánh giá tác động môi trường nhưng phải đáp ứng yêu cầu về an toàn, bảo vệ môi trường trong
                             </div>
-                        </div>
-                    </div>
-                    <div class="block6__item">
-                        <figure class="block6__img">
-                            <img alt="" src="./assets/images/block6-img-1.jpg">
-                        </figure>
-                        <div class="block6__text">
-                            <div class="title">
-                                ÁP DỤNG CƠ CHẾ ĐẶC THÙ ĐỂ SỚM ĐỦ ĐẤT LÀM ĐƯỜNG CAO TỐC BẮC - NAM
-                            </div>
-                            <div class="des">
-                                Đối với các mỏ khoáng sản làm vật liệu xây dựng thông thường (trừ cát, sỏi lòng sông, cửa biển) đã cấp phép, đang hoạt động, còn thời hạn khai thác, được phép quyết định nâng công suất không quá 50% công suất ghi trong giấy phép khai thác (không tăng trữ lượng đã cấp phép) mà không phải lập dự án đầu tư điều chỉnh, đánh giá tác động môi trường nhưng phải đáp ứng yêu cầu về an toàn, bảo vệ môi trường trong
-                            </div>
-                            <a href="#">Chi tiết</a>
+                            <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#modal-news"
+                                class="link"
+                            >Chi tiết</a>
                         </div>
                     </div>
                 </div>
+                <div class="block6__item">
+                    <div class="block6__slider--item">
+                        <figure class="block6__img">
+                            <img alt="" src="./assets/images/block6-img-1.jpg">
+                        </figure>
+                        <div class="block6__text">
+                            <div class="title">
+                                ÁP DỤNG CƠ CHẾ ĐẶC THÙ ĐỂ SỚM ĐỦ ĐẤT LÀM ĐƯỜNG CAO TỐC BẮC - NAM
+                            </div>
+                            <div class="des">
+                                Đối với các mỏ khoáng sản làm vật liệu xây dựng thông thường (trừ cát, sỏi lòng sông, cửa biển) đã cấp phép, đang hoạt động, còn thời hạn khai thác, được phép quyết định nâng công suất không quá 50% công suất ghi trong giấy phép khai thác (không tăng trữ lượng đã cấp phép) mà không phải lập dự án đầu tư điều chỉnh, đánh giá tác động môi trường nhưng phải đáp ứng yêu cầu về an toàn, bảo vệ môi trường trong
+                            </div>
+                            <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#modal-news"
+                                class="link"
+                            >Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
     <div class="block7">
         <div class="block7__wrap">
             <div class="block7__title">
-                NOVAGROUP
+                <span class="tab__title tab__nav-1 active">NOVAGROUP</span>
+                <span class="tab__title tab__nav-2">NOVALANGROUP</span>
             </div>
-            <nav>
-                <div class="nav nav-tabs" role="tablist">
-                    <a class="nav-link active" data-toggle="tab" href="#nav-1">về NOVAGROUP</a>
-                    <a class="nav-link" data-toggle="tab" href="#nav-2">về NOVAland group</a>
-                </div>
-            </nav>
+            <div class="nav nav-tabs" role="tablist">
+                <a class="nav-link active" data-toggle="tab" href="#nav-1">về NOVAGROUP</a>
+                <a class="nav-link" data-toggle="tab" href="#nav-2">về NOVAland group</a>
+            </div>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="nav-1">
-                    <div class="tab__content">
+                    <div class="tab-pane__content">
                         <div class="tab__left">
                             <div class="tab__des">
                                 <p>NovaGroup là Tập đoàn kinh tế đa ngành, tiền thân là công ty TNHH TM Thành Nhơn, thành lập năm 1992, hiện đang sở hữu 03 Tập đoàn, hệ sinh thái đa tầng:</p>
@@ -396,18 +406,50 @@
                             </div>
                             <div class="tab__logo">
                                 {% for i in  1..13 %}
-                                <a href="#">
+                                <a href="#" class="tab__logo-item">
                                     <img alt="" src="./assets/images/logo-{{i}}.png">
                                 </a>
                                 {% endfor %}
                             </div>
                         </div>
                         <figure class="tab__img">
-                            <img alt="" src="./assets/images/block4-icon-5.png">
+                            <img alt="" src="./assets/images/block7-img.jpg">
                         </figure>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="nav-2">2</div>
+                <div class="tab-pane fade" id="nav-2">
+                    <div class="tab-pane__content">
+                        <div class="tab__left">
+                            <div class="tab__des">
+                                <p>NovaGroup là Tập đoàn kinh tế đa ngành, tiền thân là công ty TNHH TM Thành Nhơn, thành lập năm 1992, hiện đang sở hữu 03 Tập đoàn, hệ sinh thái đa tầng:</p>
+                                <ul>
+                                    <li>
+                                        Novaland Group: giữ vững vị thế nhà phát triển bất động sản uy tín hàng đầu Việt Nam
+                                    </li>
+                                    <li>
+                                        Nova Services Group: vận hành và hoạt động về thương mại và dịch vụ
+                                    </li>
+                                    <li>
+                                        Nova Consumer Group: tập trung sản xuất và cung cấp các giải pháp tiêu dùng toàn diện
+                                    </li>
+                                </ul>
+                                <p>
+                                    Trong đó, Novaland Group luôn giữ vững vị thế là nhà phát triển bất động sản uy tín hàng đầu Việt Nam. Nova Service Group tập trung phát triển hệ sinh thái đa ngành nghề trong lĩnh vực thương mại và dịch vụ. Nova Consumer Group phát triển trong lĩnh vực sản xuất và cung cấp các giải pháp tiêu dùng toàn diện, đưa ra thị trường các sản phẩm chất lượng, đáp ứng nhu cầu thiết yếu và nâng cao chất lượng sống cho mọi gia đình Việt.
+                                </p>
+                            </div>
+                            <div class="tab__logo">
+                                {% for i in  14..26 %}
+                                <a href="#" class="tab__logo-item">
+                                    <img alt="" src="./assets/images/logo-{{i}}.png">
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <figure class="tab__img">
+                            <img alt="" src="./assets/images/block7-img.jpg">
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -423,57 +465,197 @@
                 <figure class="img img-man">
                     <img alt="" src="./assets/images/block8-man.png">
                 </figure>
-                <div class="block8__form--wrap">
+                <div class="block8__form--wrap form">
                     <div class="form-group">
+                        <label>Họ và tên</label>
                         <input
                             class="form-control block8Name"
                             name="name"
                             type="text"
-                            placeholder="Họ và tên"
+                            placeholder=""
                         >
                     </div>
                     <div class="form-group">
+                        <label>Số điện thoại</label>
                         <input
                             class="form-control block8Phone"
                             name="phone"
                             type="number"
-                            placeholder="Số điện thoại"
+                            placeholder=""
                         >
                     </div>
                     <div class="form-group">
+                        <label>Ngày tháng năm sinh</label>
                         <input
                             class="form-control block8Birthday"
                             name="email"
                             type="text"
-                            placeholder="Ngày tháng năm sinh"
+                            placeholder=""
                         >
                     </div>
                     <div class="form-group">
+                        <label>Email</label>
                         <input
                             class="form-control block8Email"
                             name="email"
                             type="text"
-                            placeholder="Email"
+                            placeholder=""
                         >
                     </div>
                     <div class="form-group">
+                        <label>Lĩnh vực công việc gần nhất</label>
                         <input
                             class="form-control block8Note"
                             name="note"
                             type="text"
-                            placeholder="Lĩnh vực công việc gần nhất"
+                            placeholder=""
                         >
                     </div>
-                    <div class="block8__button text-center mt-4">
-                        <button class="form__submit button" type="submit" disabled="disabled">
-                            Đăng ký
-                        </button>
+                    <div class="d-flex justify-content-between flex-wrap form__action">
+                        <div class="form-group d-flex">
+                            <label>CV:</label>
+                            <div class="flex flex-column">
+                                <input class="ml-4 block8File" name="note" type="file">
+                                <div id="captcha" class="mt-3"></div>
+                            </div>
+                        </div>
+                        <div class="block8__button mt-4">
+                            <button class="form__submit button-dk" type="submit" disabled="disabled">
+                                Đăng ký
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <figure class="img img-woman">
                     <img alt="" src="./assets/images/block8-woman.png">
                 </figure>
             </form>
+        </div>
+    </div>
+</div>
+<div
+    class="modal fade news"
+    id="modal-news"
+    tabindex="-1"
+    role="dialog"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+            >
+                <span class="icon">x</span>
+            </button>
+            <div class="modal-body ">
+                <div class="news__wrap">
+                    <h2 class="news__title">Nở rộ chính sách bán nhà 'chưa từng có'</h2>
+                    <div class="news__content">
+                        <p>Việt Nam là nước duy nhất được cả ba tổ chức xếp hạng tín nhiệm S&P, Moody’s và Fitch nâng triển vọng lên tích cực.</p>
+                        <p>Ngày 21/5, tổ chức xếp hạng tín nhiệm S&P Global Ratings (S&P) thông báo giữ nguyên hệ số tín nhiệm quốc gia của Việt Nam, nâng triển vọng từ ổn định lên tích cựcTriển vọng tích cực này nhờ các giải pháp hiệu quả để kiềm chế dịch Covid-19 trong nước, điểm đến hàng đầu Đông Nam Á về thu hút FDI, xuất khẩu tăng trưởng ổn định, nhu cầu nội địa mạnh mẽ và vị thế đối ngoại vững chắc.S&P cũng đánh giá kết quả tài khóa, nợ công của Việt Nam tiếp tục giữ vững tính hiệu quả và linh hoạt, góp phần hỗ trợ kiểm soát đại dịch. Năm ngoái, với mức tăng trưởng GDP thuộc top cao nhất thế giới, S&P đánh giá Việt Nam sẽ tiếp tục duy trì ở trạng thái tốt để phục hồi vững chắc trong vòng một đến hai năm tới</p>
+                        <p>Việt Nam là nước duy nhất được cả ba tổ chức xếp hạng tín nhiệm S&P, Moody’s và Fitch nâng triển vọng lên tích cực.</p>
+                        <p>Ngày 21/5, tổ chức xếp hạng tín nhiệm S&P Global Ratings (S&P) thông báo giữ nguyên hệ số tín nhiệm quốc gia của Việt Nam, nâng triển vọng từ ổn định lên tích cựcTriển vọng tích cực này nhờ các giải pháp hiệu quả để kiềm chế dịch Covid-19 trong nước, điểm đến hàng đầu Đông Nam Á về thu hút FDI, xuất khẩu tăng trưởng ổn định, nhu cầu nội địa mạnh mẽ và vị thế đối ngoại vững chắc.S&P cũng đánh giá kết quả tài khóa, nợ công của Việt Nam tiếp tục giữ vững tính hiệu quả và linh hoạt, góp phần hỗ trợ kiểm soát đại dịch. Năm ngoái, với mức tăng trưởng GDP thuộc top cao nhất thế giới, S&P đánh giá Việt Nam sẽ tiếp tục duy trì ở trạng thái tốt để phục hồi vững chắc trong vòng một đến hai năm tới</p>
+                        <p>Việt Nam là nước duy nhất được cả ba tổ chức xếp hạng tín nhiệm S&P, Moody’s và Fitch nâng triển vọng lên tích cực.</p>
+                        <p>Ngày 21/5, tổ chức xếp hạng tín nhiệm S&P Global Ratings (S&P) thông báo giữ nguyên hệ số tín nhiệm quốc gia của Việt Nam, nâng triển vọng từ ổn định lên tích cựcTriển vọng tích cực này nhờ các giải pháp hiệu quả để kiềm chế dịch Covid-19 trong nước, điểm đến hàng đầu Đông Nam Á về thu hút FDI, xuất khẩu tăng trưởng ổn định, nhu cầu nội địa mạnh mẽ và vị thế đối ngoại vững chắc.S&P cũng đánh giá kết quả tài khóa, nợ công của Việt Nam tiếp tục giữ vững tính hiệu quả và linh hoạt, góp phần hỗ trợ kiểm soát đại dịch. Năm ngoái, với mức tăng trưởng GDP thuộc top cao nhất thế giới, S&P đánh giá Việt Nam sẽ tiếp tục duy trì ở trạng thái tốt để phục hồi vững chắc trong vòng một đến hai năm tới</p>
+                        <p>Việt Nam là nước duy nhất được cả ba tổ chức xếp hạng tín nhiệm S&P, Moody’s và Fitch nâng triển vọng lên tích cực.</p>
+                        <p>Ngày 21/5, tổ chức xếp hạng tín nhiệm S&P Global Ratings (S&P) thông báo giữ nguyên hệ số tín nhiệm quốc gia của Việt Nam, nâng triển vọng từ ổn định lên tích cựcTriển vọng tích cực này nhờ các giải pháp hiệu quả để kiềm chế dịch Covid-19 trong nước, điểm đến hàng đầu Đông Nam Á về thu hút FDI, xuất khẩu tăng trưởng ổn định, nhu cầu nội địa mạnh mẽ và vị thế đối ngoại vững chắc.S&P cũng đánh giá kết quả tài khóa, nợ công của Việt Nam tiếp tục giữ vững tính hiệu quả và linh hoạt, góp phần hỗ trợ kiểm soát đại dịch. Năm ngoái, với mức tăng trưởng GDP thuộc top cao nhất thế giới, S&P đánh giá Việt Nam sẽ tiếp tục duy trì ở trạng thái tốt để phục hồi vững chắc trong vòng một đến hai năm tới</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div
+    class="modal fade"
+    id="modal-form"
+    tabindex="-1"
+    role="dialog"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+            >
+                <span class="icon">x</span>
+            </button>
+            <div class="modal-body popup">
+                <div class="popup__wrap">
+                    <figure class="popup__logo">
+                        <img alt="business account management" src="./assets/images/block8-logo.png">
+                    </figure>
+                    <div class="popup__des">
+                        Khi cơ hội gõ cửa, đừng chần chờ bỏ lỡ! Thử thách ngay với nghề “stylist” phong cách sống của Nova B.A.M chỉ trong vài bước đơn giản.
+                    </div>
+                </div>
+                <form method="POST" class="popup__form">
+                    <div class="popup__form--wrap form">
+                        <div class="form-group">
+                            <label>Họ và tên</label>
+                            <input
+                                class="form-control popupName"
+                                name="name"
+                                type="text"
+                                placeholder=""
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input
+                                class="form-control popupPhone"
+                                name="phone"
+                                type="number"
+                                placeholder=""
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Ngày tháng năm sinh</label>
+                            <input
+                                class="form-control popupBirthday"
+                                name="email"
+                                type="text"
+                                placeholder=""
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input
+                                class="form-control popupEmail"
+                                name="email"
+                                type="text"
+                                placeholder=""
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Lĩnh vực công việc gần nhất</label>
+                            <input
+                                class="form-control popupNote"
+                                name="note"
+                                type="text"
+                                placeholder=""
+                            >
+                        </div>
+                        <div class="d-flex justify-content-between flex-wrap form__action">
+                            <div class="form-group d-flex">
+                                <label>CV:</label>
+                                <div class="flex flex-column">
+                                    <input class="ml-4 block8File" name="note" type="file">
+                                    <div id="captcha-modal" class="mt-3"></div>
+                                </div>
+                            </div>
+                            <div class="popup__button mt-4">
+                                <button class="form__submit button-dk" type="submit" disabled="disabled">
+                                    Đăng ký
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
