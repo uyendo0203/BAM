@@ -187,7 +187,7 @@
     }
     &__wrap {
         margin-left: vw(340px);
-        margin-right: vw(410px);
+        margin-right: 17.35vw;
         @media (max-width: 767px) {
             margin: 50px auto;
             max-width: 85%;
@@ -195,14 +195,14 @@
     }
     &__top {
         @include flexbox;
-        margin-bottom: vw(50px);
+        margin-bottom: 2vw;
         @media (max-width: 767px) {
             flex-direction: column;
             margin-bottom: 30px;
         }
     }
     &__top--left {
-        width: vw(410px);
+        width: 21.5vw;
         @media (max-width: 767px) {
             width: 100%;
             margin-bottom: 20px;
@@ -213,6 +213,7 @@
         flex: 1;
         width: vw(740px);
         height: vw(395px);
+        overflow: hidden;
         @media (max-width: 767px) {
             width: 100%;
             height: 300px;
@@ -246,6 +247,7 @@
         margin-right: vw(-55px);
         margin-bottom: vw(30px);
         padding-top: vw(10px);
+        width: 80%;
         @media (max-width: 767px) {
             font-size: 42px;
             margin-bottom: 20px;
@@ -387,7 +389,8 @@
         // text-align: justify;
         text-align: center;
         color: #712012;
-        margin: vw(17px) vw(30px) vw(10px) vw(30px);
+        // margin: vw(17px) vw(30px) vw(10px) vw(30px);
+        margin: 0.88542vw 0.625vw 0.52083vw;
         @media (max-width: 767px) {
             margin: 17px 30px 30px 30px;
         }
@@ -515,6 +518,7 @@
         }
     }
     &__content {
+        @include justify-content(center);
         @media (max-width: 767px) {
             flex-direction: column;
         }
@@ -578,6 +582,11 @@
     }
     &__img {
         width: vw(520px);
+        @media (max-width: 767px) {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     &__left,
     &__right {
@@ -747,7 +756,7 @@
             padding-left: vw(40px);
             padding-right: vw(65px);
             width: vw(657px);
-            text-indent: vw(20px);
+            text-indent: 20px;
 
             @media (max-width: 767px) {
                 font-size: 16px;
@@ -1154,7 +1163,7 @@
         @include flex-wrap(wrap);
         @include justify-content(center);
         width: vw(680px);
-        margin-left: -6%;
+        margin-left: -5%;
         @media (max-width: 767px) {
             width: 100%;
             margin: 0;
@@ -1162,7 +1171,7 @@
     }
     .tab__logo-item {
         display: inline-block;
-        // width: vw(100px);
+        width: vw(100px);
         margin: 0 vw(7px);
         margin-bottom: vw(20px);
         @media (max-width: 767px) {
@@ -1277,5 +1286,11 @@
             width: vw(155px);
             right: vw(-75px);
         }
+    }
+}
+
+#captcha-modal {
+    @media (max-width: 767px) {
+        margin-left: -25px;
     }
 }

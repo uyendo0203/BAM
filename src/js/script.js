@@ -268,7 +268,7 @@ $(window).on("load", function () {
 
 
 
-var sections = $('section')
+var sections = $('.block')
     , nav_text = $('.header-menu__nav')
     , nav_height = nav_text.outerHeight();
 

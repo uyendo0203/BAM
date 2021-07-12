@@ -350,8 +350,9 @@ button {
     width: 100%;
     z-index: 999;
     top: 0;
-    padding-left: vw(380px);
-    padding-right: vw(320px);
+
+    // padding-right: vw(320px);
+
     @media (max-width: 1310px) {
         padding-left: vw(360px);
         padding-right: vw(380px);
@@ -396,8 +397,10 @@ button {
         @include align-items(flex-start);
         // @include justify-content(space-between);
         @include flex-wrap(wrap);
+        padding-left: vw(380px);
+        width: 65.54vw;
 
-        width: 100%;
+        // width: 100%;
         padding: 1.2vw 0;
         margin-left: auto;
         margin-right: auto;
@@ -809,7 +812,8 @@ button {
             margin-bottom: vw(10px);
         }
     }
-    &__form-wrap {
+    &__form--wrap {
+        margin-right: 15px;
     }
     &__logo {
         width: vw(220px);
