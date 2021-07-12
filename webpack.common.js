@@ -126,7 +126,7 @@ module.exports = (env, argv) => {
         config.devServer = {
             contentBase: "./dist",
             writeToDisk: true,
-            port: 9000,
+            port: 9001,
             host: argv.mode ? argv.mode.host : 'localhost',
         }
     }

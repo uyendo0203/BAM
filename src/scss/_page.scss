@@ -237,7 +237,7 @@
     &__title {
         font-family: $UTMBebas;
         color: #0e1c41;
-        line-height: 1;
+        line-height: 1.15;
         text-align: right;
         margin-left: auto;
         position: relative;
@@ -478,7 +478,8 @@
         font-family: $UTMAvoBold;
         transform: translateY(vw(-8px));
         @media (max-width: 767px) {
-            font-size: 45px;
+            // font-size: 45px;
+            font-size: 9.375vw;
         }
     }
 }
@@ -508,7 +509,8 @@
         color: #0e1c41;
 
         @media (max-width: 767px) {
-            font-size: 35px;
+            // font-size: 35px;
+            font-size: 10.375vw;
             width: 100%;
             margin-bottom: 10px;
         }
@@ -535,7 +537,8 @@
         margin-bottom: vw(100px);
         margin-top: vw(80px);
         @media (max-width: 767px) {
-            font-size: 28px;
+            // font-size: 28px;
+            font-size: 6.375vw;
         }
     }
     &__item--wrap {

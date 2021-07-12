@@ -145,7 +145,7 @@ let Block8ValidateForm = function () {
         // minLength: 10,
         // maxLength: 10,
     }, {
-        name: '.home5Email',
+        name: '.block8Email',
         validators: []
     }]
     var $submit = ".block8__form button";
