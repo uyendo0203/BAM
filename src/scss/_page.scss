@@ -62,7 +62,6 @@
     }
     &__sub1 {
         font-family: $UTMAvo;
-
         text-transform: uppercase;
         color: #863622;
         font-size: vw(41px);
@@ -195,7 +194,7 @@
         }
     }
     &__top {
-        display: flex;
+        @include flexbox;
         margin-bottom: vw(50px);
         @media (max-width: 767px) {
             flex-direction: column;
@@ -243,7 +242,7 @@
         position: relative;
         z-index: 1;
         font-size: vw(100px);
-        width: vw(310px);
+        // width: vw(310px);
         margin-right: vw(-55px);
         margin-bottom: vw(30px);
         padding-top: vw(10px);
@@ -285,7 +284,7 @@
         }
     }
     &__bottom {
-        display: flex;
+        @include flexbox;
         width: vw(1225px);
         @media (max-width: 767px) {
             width: 100%;
@@ -407,7 +406,7 @@
         z-index: -1;
     }
     &__wrap {
-        width: vw(1010px);
+        width: vw(1030px);
         margin-left: vw(380px);
         color: #712012;
 
@@ -418,7 +417,7 @@
         }
     }
     &__title {
-        display: flex;
+        @include flexbox;
         .sign {
             width: vw(230px);
             margin-right: vw(20px);
@@ -426,15 +425,15 @@
         }
     }
     &__sub-title {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
+        @include flexbox;
+        @include justify-content(flex-end);
+        @include align-items(flex-start);
         @media (max-width: 767px) {
             margin-bottom: 30px;
         }
         .text {
             text-transform: uppercase;
-            display: flex;
+            @include flexbox;
             flex-direction: column;
             font-size: vw(50px);
             text-align: right;
@@ -544,7 +543,7 @@
     &__item--wrap {
     }
     &__item--child {
-        display: flex;
+        @include flexbox;
         margin-bottom: vw(60px);
         .img {
             width: vw(80px);
@@ -562,6 +561,12 @@
             }
         }
         &.other {
+            @media (max-width: 1400px) {
+                margin-left: 20px;
+            }
+            @media (max-width: 767px) {
+                margin-left: 0;
+            }
             .block4__item--title {
                 margin-top: 0;
                 margin-bottom: vw(5px);
@@ -664,7 +669,7 @@
         }
     }
     &__slider--bottom {
-        display: flex;
+        @include flexbox;
         margin-top: vw(25px);
         margin-left: vw(130px);
         width: vw(640px);
@@ -885,7 +890,7 @@
         z-index: 1;
     }
     &__slider--item {
-        display: flex;
+        @include flexbox;
 
         @media (max-width: 767px) {
             width: calc(100% - 2px);
@@ -894,7 +899,7 @@
         }
     }
     &__item {
-        display: flex;
+        @include flexbox;
         // margin: 0 35px;
     }
     &__img {
@@ -1103,11 +1108,12 @@
     .tab__des {
         color: #88431c;
         text-align: justify;
-        padding-left: vw(60px);
-        width: vw(475px);
+        padding-left: vw(72px);
+        width: vw(555px);
         @media (max-width: 767px) {
             width: 100%;
             margin: 0;
+            padding: 0;
         }
         ul {
             list-style: none;
@@ -1144,17 +1150,19 @@
         }
     }
     .tab__logo {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: vw(620px);
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+        width: vw(680px);
+        margin-left: -6%;
         @media (max-width: 767px) {
             width: 100%;
+            margin: 0;
         }
     }
     .tab__logo-item {
         display: inline-block;
-        width: vw(100px);
+        // width: vw(100px);
         margin: 0 vw(7px);
         margin-bottom: vw(20px);
         @media (max-width: 767px) {
@@ -1166,7 +1174,7 @@
     }
     .tab-pane__content {
         width: 100%;
-        display: flex;
+        @include flexbox;
         align-items: flex-start;
         @media (max-width: 767px) {
             flex-direction: column;

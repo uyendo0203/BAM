@@ -187,8 +187,10 @@ button {
     label {
         color: #88431c;
         padding-left: vw(8px);
+        font-size: vw(16px);
         @media (max-width: 767px) {
             padding-left: 10px;
+            font-size: 14px;
         }
     }
 }
@@ -349,7 +351,11 @@ button {
     z-index: 999;
     top: 0;
     padding-left: vw(380px);
-    padding-right: vw(395px);
+    padding-right: vw(320px);
+    @media (max-width: 1310px) {
+        padding-left: vw(360px);
+        padding-right: vw(380px);
+    }
     &.fixed {
         background: #ffffffde;
         box-shadow: -2px 4px 5px #0000001a;
@@ -374,7 +380,7 @@ button {
             }
         }
         .header-logo-2 {
-            width: 5vw;
+            width: 4vw;
             @media (max-width: 767px) {
                 width: 70px;
             }
@@ -388,7 +394,7 @@ button {
     &-container {
         @include flexbox;
         @include align-items(flex-start);
-        @include justify-content(space-between);
+        // @include justify-content(space-between);
         @include flex-wrap(wrap);
 
         width: 100%;
@@ -416,11 +422,14 @@ button {
             }
         }
         &-2 {
-            width: vw(125px);
+            width: vw(100px);
             transition: all 0.2s ease;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: auto;
             @media (max-width: 767px) {
                 margin: 0 10px;
-                width: 100px;
+                width: 80px;
             }
         }
     }
@@ -429,6 +438,8 @@ button {
         @include flexbox;
         @include align-items(center);
         @include flex-wrap(wrap);
+        margin-left: vw(50px);
+
         .btn {
             color: #fff;
             @media (max-width: 767px) {
@@ -524,16 +535,19 @@ button {
                 padding: 7px 15px;
                 @include transform(translateX(50%));
             }
-            &::before,
-            &::after {
-                position: absolute;
-                content: "";
-                transition: all 0.2s ease;
-                width: 0;
-                width: vw(12px);
-                height: vw(2px);
-                right: vw(-17px);
+            &:not(:last-child) {
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: "";
+                    transition: all 0.2s ease;
+                    width: 0;
+                    width: vw(12px);
+                    height: vw(2px);
+                    right: vw(-17px);
+                }
             }
+
             &::before {
                 background-color: #88431c;
                 top: vw(15px);
