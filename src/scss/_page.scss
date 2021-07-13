@@ -475,7 +475,7 @@
         }
     }
     &__title--main {
-        font-size: vw(84px);
+         font-size:8.0vw;
         line-height: 1;
         font-family: $UTMAvoBold;
         transform: translateY(vw(-8px));
@@ -532,7 +532,7 @@
         }
     }
     &__item--title {
-        font-size: vw(30px);
+        font-size:5.5vw;
         font-family: $UTMBebas;
         text-transform: uppercase;
         line-height: 1.1;
