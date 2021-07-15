@@ -218,6 +218,7 @@ let slider6 = function () {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 1,
+                    slidesToScroll: 1,
                 }
             },
         ]

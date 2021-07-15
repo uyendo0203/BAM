@@ -248,6 +248,7 @@
         margin-bottom: vw(30px);
         padding-top: vw(10px);
         width: 80%;
+        font-weight: normal;
         @media (max-width: 767px) {
             font-size: 42px;
             margin-bottom: 20px;
@@ -279,7 +280,8 @@
         b {
             text-transform: uppercase;
             font-size: vw(18px);
-            font-family: $UTMAvoBold;
+            font-weight: 600; // thêm
+            color: #0e1c41; // thêm
             @media (max-width: 767px) {
                 font-size: 14px;
             }
@@ -475,7 +477,8 @@
         }
     }
     &__title--main {
-         font-size:8.0vw;
+        // font-size: 8vw;
+        font-size: 4.375vw;
         line-height: 1;
         font-family: $UTMAvoBold;
         transform: translateY(vw(-8px));
@@ -509,7 +512,7 @@
         text-align: center;
         line-height: 1.1;
         color: #0e1c41;
-
+        font-weight: normal;
         @media (max-width: 767px) {
             // font-size: 35px;
             font-size: 10.375vw;
@@ -532,13 +535,15 @@
         }
     }
     &__item--title {
-        font-size:5.5vw;
+        // font-size: 5.5vw;
+        font-size: 1.5625vw;
         font-family: $UTMBebas;
         text-transform: uppercase;
         line-height: 1.1;
         color: #0e1c41;
         margin-bottom: vw(100px);
         margin-top: vw(80px);
+        font-weight: normal;
         @media (max-width: 767px) {
             // font-size: 28px;
             font-size: 6.375vw;
@@ -1115,14 +1120,24 @@
         }
     }
     .tab__des {
+        // color: #88431c;
+        // text-align: justify;
+        // padding-left: vw(72px);
+        // width: vw(555px);
+
         color: #88431c;
         text-align: justify;
-        padding-left: vw(72px);
-        width: vw(555px);
+        padding-left: 3.4vw;
+        width: 25.5vw;
+        margin-right: 5vw; // thêm
+        font-size: 0.95vw; // thêm
+        font-weight: normal; // thêm
+
         @media (max-width: 767px) {
             width: 100%;
             margin: 0;
             padding: 0;
+            font-size: 3vw; // thêm
         }
         ul {
             list-style: none;
@@ -1253,6 +1268,7 @@
     &__des {
         font-size: vw(16px);
         color: #9f5e34;
+        margin-bottom: 1.5vw;
         @media (max-width: 767px) {
             font-size: 14px;
             margin-bottom: 20px;

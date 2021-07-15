@@ -425,11 +425,11 @@ button {
             }
         }
         &-2 {
-            width: vw(100px);
+            width: 6.20833vw;
             transition: all 0.2s ease;
             margin-top: auto;
             margin-bottom: auto;
-            margin-left: 1.1vw
+            margin-left: 1.1vw;
             @media (max-width: 767px) {
                 margin: 0 10px;
                 width: 80px;
@@ -875,6 +875,7 @@ button {
         font-family: $UTMAvoBold;
         font-size: vw(32px);
         margin-bottom: vw(20px);
+        padding-right: 3vw;
         @media (max-width: 767px) {
             font-size: 25px;
             margin-bottom: 20px;
