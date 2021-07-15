@@ -658,6 +658,7 @@
         font-family: $UTMBebas;
         color: #0e1c41;
         line-height: normal;
+        font-weight: normal;
 
         @media (max-width: 767px) {
             font-size: 30px;
@@ -1034,7 +1035,7 @@
         border: none;
         margin-bottom: vw(45px);
         margin-left: vw(45px);
-
+        font-weight: normal;
         @media (max-width: 767px) {
             margin-bottom: 30px;
             margin-left: 0;
