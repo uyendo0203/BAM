@@ -87,11 +87,19 @@ function goToByScroll(link) {
 
     let space = 0
     switch (link) {
-        case 'quyenloi':
+        case 'dangky':
             space = -50
             break;
-        case 'dataotoandien':
+
         case 'noibat':
+            space = -50
+            break;
+
+        case 'quyenloi':
+            space = -80
+            break;
+
+        case 'dataotoandien':
         case 'sukien':
         case 'gioithieu':
             space = -100

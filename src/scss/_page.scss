@@ -554,6 +554,9 @@
     &__item--child {
         @include flexbox;
         margin-bottom: vw(60px);
+        &:last-child {
+            margin-bottom: 0;
+        }
         .img {
             width: vw(80px);
             margin-right: vw(20px);
@@ -570,6 +573,7 @@
             }
         }
         &.other {
+            margin-bottom: 0;
             @media (max-width: 1400px) {
                 margin-left: 20px;
             }
@@ -611,12 +615,12 @@
     }
 }
 .block5 {
-    margin-top: vw(50px);
+    padding-top: vw(120px);
     position: relative;
     overflow: hidden;
 
     @media (max-width: 767px) {
-        margin: 50px 0;
+        padding: 50px 0;
     }
 
     &::before,
